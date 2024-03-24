@@ -22,7 +22,7 @@ let handleLogin = async (req, res) => {
 
         errCode: userData.errCode,
         message: userData.errMessage,
-        user: userData.user ? userData.user : { 'a': 'abc' }
+        user: userData.user ? userData.user : {}
     })
 }
 
