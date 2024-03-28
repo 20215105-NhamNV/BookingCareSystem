@@ -110,26 +110,26 @@ let createNewUser = (data) => {
             if (check === true) {
                 resolve({
                     errCode: 1,
-                    message: "your email is already used, try another one"
+                    errMessage: "your email is already used, try another one"
                 })
+            } else {
+                let hashPasswordFrombcrypt = await hashUserPassword(data.password);
+                await db.User.create({
+                    email: data.email,
+                    password: hashPasswordFrombcrypt,
+                    firstName: data.firstName,
+                    lastName: data.lastName,
+                    address: data.address,
+                    phonenumber: data.phonenumber,
+                    gender: data.gender == '1' ? true : false,
+                    image: data.image,
+                    roleId: data.roleId,
+                })
+                resolve({
+                    errCode: 0,
+                    errMessage: 'ok'
+                });
             }
-
-            let hashPasswordFrombcrypt = await hashUserPassword(data.password);
-            await db.User.create({
-                email: data.email,
-                password: hashPasswordFrombcrypt,
-                firstName: data.firstName,
-                lastName: data.lastName,
-                address: data.address,
-                phonenumber: data.phonenumber,
-                gender: data.gender == '1' ? true : false,
-                image: data.image,
-                roleId: data.roleId,
-            })
-            resolve({
-                errCode: 0,
-                message: 'ok'
-            });
         } catch (e) {
             reject(e)
         }
@@ -153,7 +153,7 @@ let deleteUser = (userId) => {
         })
         resolve({
             errCode: 0,
-            message: "the user is deleted"
+            errMessage: "the user is deleted"
         })
     })
 }
@@ -188,7 +188,7 @@ let updateUserData = (data) => {
 
                 resolve({
                     errCode: 0,
-                    message: "update use succeeds!"
+                    errMessage: "update use succeeds!"
                 })
             }
             else {
