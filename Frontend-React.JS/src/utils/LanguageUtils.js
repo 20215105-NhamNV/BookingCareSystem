@@ -1,5 +1,5 @@
 import messages_vi from '../translations/vi.json';
-import messages_en from '../translations/en.json';
+import messages_jpn from '../translations/jpn.json';
 
 const flattenMessages = ((nestedMessages, prefix = '') => {
     if (nestedMessages == null) {
@@ -10,7 +10,7 @@ const flattenMessages = ((nestedMessages, prefix = '') => {
         const prefixedKey = prefix ? `${prefix}.${key}` : key;
 
         if (typeof value === 'string') {
-            Object.assign(messages, {[prefixedKey]: value})
+            Object.assign(messages, { [prefixedKey]: value })
         } else {
             Object.assign(messages, flattenMessages(value, prefixedKey))
         }
@@ -21,7 +21,7 @@ const flattenMessages = ((nestedMessages, prefix = '') => {
 
 const messages = {
     'vi': flattenMessages(messages_vi),
-    'en': flattenMessages(messages_en),
+    'jpn': flattenMessages(messages_jpn),
 };
 
 export default class LanguageUtils {

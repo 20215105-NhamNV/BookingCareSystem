@@ -1,4 +1,25 @@
 {
+    "home-header": {
+        "speciality": "専科",
+        "search-doctor": "専門分野から医師を探す",
+        "health-facility": "保健医療施設",
+        "select-room": "クリニックを選ぶ",
+        "doctor": "医者",
+        "select-doctor": "良い医者を選びましょう",
+        "fee": "医療パッケージ",
+        "check-health": "一般的な健康診断",
+        "support": "サポート"
+    },
+    "banner": {
+        "title1": "医学的背景",
+        "title2": "包括医療",
+        "child1": "専門的な健康診断",
+        "child2": "遠隔診療",
+        "child3": "身体検査",
+        "child4": "医療検査",
+        "child5": "精神衛生",
+        "child6": "歯科検診"
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",
