@@ -2,11 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './HomeHeader.scss'
 import { FormattedMessage } from 'react-intl';
+import { LANGUAGES } from '../../utils/constant';
+import { changeLanguageApp } from '../../store/actions/appActions';
 
 class HomeHeader extends Component {
 
+    changeLanguage = (language) => {
+        this.props.changeLanguageAppRedux(language)
+        //fire redux event: actions
+    }
+
     render() {
         console.log('check props', this.props)
+        let language = this.props.language;
         return (
             //react.fragment: make block to render( react always renders a block )
             <React.Fragment>
@@ -41,8 +49,8 @@ class HomeHeader extends Component {
                                 <i className="fas fa-question-circle"></i>
                                 <FormattedMessage id="home-header.support" />
                             </div>
-                            <div className='language-vie active'>VIE</div>
-                            <div className='language-jpn active'>JPN</div>
+                            <div className={language === LANGUAGES.VI ? 'language-vie active' : 'language-vie'}><span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VIE</span></div>
+                            <div className={language === LANGUAGES.JPN ? 'language-jpn active' : 'language-jpn'}><span onClick={() => this.changeLanguage(LANGUAGES.JPN)}>JPN</span></div>
                         </div>
                     </div>
                 </div>
@@ -57,7 +65,7 @@ class HomeHeader extends Component {
                             <FormattedMessage id="banner.title2" />
                         </div>
                         <div className='search'>
-                            <i class="fas fa-search"></i>
+                            <i className="fas fa-search"></i>
                             <input type='text' placeholder='tìm chuyên khoa khám bệnh' />
                         </div>
 
@@ -66,37 +74,37 @@ class HomeHeader extends Component {
                         <div className='option'>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="far fa-hospital"></i>
+                                    <i className="far fa-hospital"></i>
                                 </div>
                                 <div className='text-child'><FormattedMessage id="banner.child1" /></div>
                             </div>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="fas fa-mobile-alt"></i>
+                                    <i className="fas fa-mobile-alt"></i>
                                 </div>
                                 <div className='text-child'><FormattedMessage id="banner.child2" /></div>
                             </div>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="fas fa-procedures"></i>
+                                    <i className="fas fa-procedures"></i>
                                 </div>
                                 <div className='text-child'><FormattedMessage id="banner.child3" /></div>
                             </div>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="fas fa-vial"></i>
+                                    <i className="fas fa-vial"></i>
                                 </div>
                                 <div className='text-child'><FormattedMessage id="banner.child4" /></div>
                             </div>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="fas fa-briefcase-medical"></i>
+                                    <i className="fas fa-briefcase-medical"></i>
                                 </div>
                                 <div className='text-child'><FormattedMessage id="banner.child5" /></div>
                             </div>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="fas fa-user-md"></i>
+                                    <i className="fas fa-user-md"></i>
                                 </div>
                                 <div className='text-child'><FormattedMessage id="banner.child6" /></div>
                             </div>
@@ -120,6 +128,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        changeLanguageAppRedux: (language) => dispatch(changeLanguageApp(language))
     };
 };
 
