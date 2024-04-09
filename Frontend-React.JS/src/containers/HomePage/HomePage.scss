@@ -44,6 +44,38 @@
          background: #f5f5f5;
      }
 
+     &.section-about {
+         height: 500px !important;
+         padding: 0 150px;
+
+         .section-about-header {
+             padding: 20px 10px;
+             font-size: 22px;
+             font-weight: 600;
+         }
+
+         .section-about-content {
+             display: flex;
+             flex-direction: row;
+             gap: 30px; // distance of two div
+             width: 100%;
+
+             .content-left {
+                 width: 60%;
+             }
+
+             .content-right {
+                 width: 40%;
+
+                 p {
+                     text-align: justify;
+                     font-style: italic;
+                     padding-top: 15px;
+                 }
+             }
+         }
+     }
+
 
      .section-body {
 
@@ -75,6 +107,7 @@
                  &.section-handbooks {
                      background-image: url('../../assets/handbooks/cam-nang.png');
                  }
+
              }
 
          }
@@ -103,7 +136,7 @@
 
      .section-container {
 
-         margin: 0 150px;
+         padding: 0 150px;
          display: flex;
          flex-direction: column;
 
@@ -155,4 +188,13 @@
          }
      }
 
+ }
+
+ .home-footer {
+     text-align: center;
+     padding-top: 8px;
+
+     a {
+         text-decoration: unset;
+     }
  }
