@@ -9,7 +9,7 @@ class HomeFooter extends Component {
         return (
             <div className='home-footer'>
                 <p>
-                    &copy; 2024 hespi with Van Nham more infor.
+                    &copy; 2024 HESPI with Van Nham. More information.
                     <a
                         target='_blank'
                         href='https://youtu.be/FyDQljKtWnI'>
