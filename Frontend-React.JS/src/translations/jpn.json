@@ -48,11 +48,11 @@
     },
     "menu": {
         "system": {
-            "header": "System",
+            "header": "システム",
             "system-administrator": {
-                "header": "System Administrator",
-                "user-manage": "User manage",
-                "product-manage": "Package manage",
+                "header": "システム管理者",
+                "user-manage": "ユーザー管理",
+                "user-redux": "Reduxを使用してユーザーを管理する",
                 "register-package-group-or-account": "Register service package for group/account"
             },
             "system-parameter": {
