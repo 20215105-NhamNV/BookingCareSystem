@@ -35,5 +35,19 @@
             "handbook": "ハンドバック",
             "manage-handbook": "ハンドブックの管理"
         }
+    },
+    "manage-user": {
+        "add": "新しいユーザーを作成する",
+        "email": "メール",
+        "password": "パスワード",
+        "first-name": "名",
+        "last-name": "姓",
+        "phone-number": "電話番号",
+        "address": "住所",
+        "gender": "ジェンダー",
+        "position": "位置",
+        "role": "役割",
+        "image": "画像",
+        "save": "セーブ"
     }
 }

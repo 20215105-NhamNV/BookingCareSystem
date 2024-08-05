@@ -134,7 +134,7 @@ class UserManage extends Component {
                         editUser={this.doEditUser}
                     />
                 }
-                <div className='title text-center'>Manage users with HESPI</div>
+                <div className='title text-center'>Manage users with HEDSPI</div>
                 <div className='mx-1'>
                     <button className='btn btn-primary px-3'
                         onClick={() => this.handleAddNewUser()}>
